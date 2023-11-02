@@ -5,6 +5,8 @@
     "paths": {
       "@src/*": ["src/*"],
       "@src": ["src"],
+      "@core/*": ["src/core/*"],
+      "@features/*": ["src/features/*"],
     }
   }
 }
