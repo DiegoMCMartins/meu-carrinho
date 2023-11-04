@@ -11,7 +11,7 @@ import {styles} from './styles';
 export default function Header() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Minhas Listas</Text>
+      <Text variant="Medium" style={styles.title}>Minhas Listas</Text>
     </View>
   );
 }

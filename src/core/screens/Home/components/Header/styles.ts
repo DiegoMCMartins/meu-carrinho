@@ -6,5 +6,6 @@ export const styles = StyleSheet.create({
   },
   title: {
     color: '#FFF',
+    fontSize: 24,
   },
 });
