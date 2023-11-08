@@ -1,6 +1,7 @@
 import React from 'react';
 
 import FullContainer from '@core/components/FullContainer';
+import colors from '@core/styles/colors';
 
 import Header from './components/Header';
 
@@ -9,7 +10,7 @@ import Header from './components/Header';
  */
 export default function Home() {
   return (
-    <FullContainer>
+    <FullContainer backgroundColor={colors.white}>
       <Header />
     </FullContainer>
   );

@@ -72,3 +72,7 @@ const fonts: Record<MeuCarrinhoFont, MeuCarrinhoFontFamily> = {
 ```javascript
 <Text font="Montserrat" variant="SemiBold">Text</Text>
 ```
+
+## To Do
+- [] Utilizar o EdgeInsets no Android
+- [] Ajustar a troca dinâmica da cor do StatusBar e NavigationBar no Android
