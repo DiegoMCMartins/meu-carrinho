@@ -56,6 +56,11 @@ const DUMMY_SHOPPING_LIST: ShoppingListItemData[] = [
     name: 'Fontes',
     createdAt: '07/11/2023',
   },
+  {
+    id: 11,
+    name: 'Fontes',
+    createdAt: '07/11/2023',
+  },
 ];
 
 /**

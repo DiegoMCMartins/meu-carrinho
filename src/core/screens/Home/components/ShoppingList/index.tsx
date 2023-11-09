@@ -1,10 +1,10 @@
 import React from 'react';
 import {ListRenderItemInfo, View} from 'react-native';
 
-import EnhancedFlatList from '@core/components/EnhancedFlatList';
-
 import ShoppingListItem, {ShoppingListItemData} from './ShoppingListItem';
 import {styles} from './styles';
+
+import GridFlatList from '@src/core/components/GridFlatList';
 
 /**
  * @todo Adjust grid, adding hidden components to organize the last row
@@ -18,12 +18,12 @@ export default function ShoppingList({shoppingList = []}: ShoppingListProps) {
 
   return (
     <View style={styles.container}>
-      <EnhancedFlatList
+      <GridFlatList
         data={shoppingList}
         renderItem={renderShoppingListItem}
         keyExtractor={item => `${item.id}`}
         numColumns={2}
-        columnWrapperStyle={styles.columnContainer}
+        gap={8}
         contentContainerStyle={styles.contentContainerStyle}
       />
     </View>
