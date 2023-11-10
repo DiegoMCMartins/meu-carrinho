@@ -3,13 +3,13 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
+        <item name="android:editTextBackground" tools:targetApi="honeycomb">@drawable/rn_edit_text_material</item>
 
-        <item name="android:navigationBarColor">
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">
             @color/primary
         </item>
 
-        <item name="android:statusBarColor">
+        <item name="android:statusBarColor" tools:targetApi="lollipop">
             @color/primary
         </item>
 
@@ -18,6 +18,14 @@
         </item>
 
         <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">
+            false
+        </item>
+
+        <item name="android:enforceNavigationBarContrast" tools:targetApi="q">
+            false
+        </item>
+
+        <item name="android:enforceStatusBarContrast" tools:targetApi="q">
             false
         </item>
     </style>

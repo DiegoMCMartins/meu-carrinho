@@ -76,3 +76,4 @@ const fonts: Record<MeuCarrinhoFont, MeuCarrinhoFontFamily> = {
 ## To Do
 - [] Utilizar o EdgeInsets no Android
 - [] Ajustar a troca dinâmica da cor do StatusBar e NavigationBar no Android
+- [] Ajustar para telas maiores e modo paisagem
