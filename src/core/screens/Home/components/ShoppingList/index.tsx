@@ -5,6 +5,7 @@ import ShoppingListItem, {ShoppingListItemData} from './ShoppingListItem';
 import {styles} from './styles';
 
 import GridFlatList from '@src/core/components/GridFlatList';
+import EmptyShoppingList from './EmptyShoppingList';
 
 /**
  * @todo Adjust grid, adding hidden components to organize the last row
@@ -25,6 +26,7 @@ export default function ShoppingList({shoppingList = []}: ShoppingListProps) {
         numColumns={2}
         gap={8}
         contentContainerStyle={styles.contentContainerStyle}
+        EmptyElement={<EmptyShoppingList />}
       />
     </View>
   );

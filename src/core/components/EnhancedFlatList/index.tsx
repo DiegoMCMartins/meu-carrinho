@@ -6,8 +6,9 @@ import {styles} from './styles';
 interface RenderListEmptyElementProps {
   isLoading?: boolean;
   hasError?: boolean;
-  LoadingElement?: JSX.Element | null;
-  ErrorElement?: JSX.Element | null;
+  LoadingElement?: (() => JSX.Element) | JSX.Element | null;
+  ErrorElement?: (() => JSX.Element) | JSX.Element | null;
+  EmptyElement?: (() => JSX.Element) | JSX.Element | null;
 }
 
 const renderListEmptyElement = ({
@@ -15,16 +16,23 @@ const renderListEmptyElement = ({
   hasError,
   ErrorElement,
   LoadingElement,
+  EmptyElement,
 }: RenderListEmptyElementProps): JSX.Element | null => {
   if (isLoading) {
-    return LoadingElement ? LoadingElement : null;
+    return typeof LoadingElement === 'function'
+      ? LoadingElement()
+      : LoadingElement || null;
   }
 
   if (hasError) {
-    return ErrorElement ? ErrorElement : null;
+    return typeof ErrorElement === 'function'
+      ? ErrorElement()
+      : ErrorElement || null;
   }
 
-  return null;
+  return typeof EmptyElement === 'function'
+    ? EmptyElement()
+    : EmptyElement || null;
 };
 
 /**
@@ -35,6 +43,7 @@ export default function EnhancedFlatList<ItemT>({
   hasError = false,
   LoadingElement = null,
   ErrorElement = null,
+  EmptyElement = null,
   ...props
 }: EnhancedFlatListProps<ItemT>) {
   return (
@@ -50,15 +59,13 @@ export default function EnhancedFlatList<ItemT>({
           hasError,
           ErrorElement,
           LoadingElement,
+          EmptyElement,
         })
       }
     />
   );
 }
 
-/**
- * @todo ListEmptyComponent removed because type problem, active it when necessary
- */
 export interface EnhancedFlatListProps<ItemT>
   extends Omit<FlatListProps<ItemT>, 'ListEmptyComponent'> {
   /**
@@ -77,11 +84,16 @@ export interface EnhancedFlatListProps<ItemT>
    * Component to be rendered when list is loading
    * @default null
    */
-  LoadingElement?: JSX.Element | null;
+  LoadingElement?: (() => JSX.Element) | JSX.Element | null;
 
   /**
    * Component to be rendered when list has error
    * @default null
    */
-  ErrorElement?: JSX.Element | null;
+  ErrorElement?: (() => JSX.Element) | JSX.Element | null;
+
+  /**
+   * Component to be rendered when list is empty
+   */
+  EmptyElement?: (() => JSX.Element) | JSX.Element | null;
 }

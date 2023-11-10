@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-import {colorVariations} from '@core/styles/colors';
+import colors, {colorVariations} from '@core/styles/colors';
 
 export const styles = StyleSheet.create({
   container: {
@@ -41,5 +41,19 @@ export const shoppingListItemStyles = StyleSheet.create({
   date: {
     color: colorVariations.primary?.[500],
     fontSize: 14,
+  },
+});
+
+export const emptyShoppingListStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: colors.white,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    color: colorVariations.primary?.[950],
+    fontSize: 20,
+    textAlign: 'center',
   },
 });
