@@ -1,7 +1,8 @@
 import React, {PropsWithChildren} from 'react';
-import {Modal, View} from 'react-native';
+import Modal from 'react-native-modal';
 
 import {styles} from './styles';
+import {colorVariations} from '@src/core/styles/colors';
 
 export default function BottomSheet({
   isVisible = false,
@@ -10,11 +11,18 @@ export default function BottomSheet({
 }: BottomSheetProps) {
   return (
     <Modal
-      visible={isVisible}
-      animationType="slide"
-      transparent
-      onRequestClose={onRequestClose}>
-      <View style={styles.container}>{children}</View>
+      isVisible={isVisible}
+      animationIn="slideInUp"
+      animationOut="slideOutDown"
+      swipeDirection="down"
+      hasBackdrop
+      onBackButtonPress={onRequestClose}
+      onBackdropPress={onRequestClose}
+      onSwipeComplete={onRequestClose}
+      style={styles.container}
+      backdropColor={colorVariations.primary?.[900]}
+      backdropOpacity={0.6}>
+      {children}
     </Modal>
   );
 }

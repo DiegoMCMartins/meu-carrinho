@@ -1,11 +1,19 @@
 import {StyleSheet} from 'react-native';
 
-import colors from '@core/styles/colors';
+import colors, {colorVariations} from '@core/styles/colors';
 
 export const styles = StyleSheet.create({
   container: {
-    height: 200,
+    minHeight: 300,
     width: '100%',
-    backgroundColor: colors.primary,
+    backgroundColor: colorVariations.primary?.[100],
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    padding: 20,
+  },
+  headerContainer: {},
+  headerTitle: {
+    fontSize: 24,
+    color: colors.primary,
   },
 });
