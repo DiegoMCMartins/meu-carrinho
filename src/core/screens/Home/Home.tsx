@@ -6,6 +6,7 @@ import colors from '@core/styles/colors';
 import Header from './components/Header';
 import ShoppingList from './components/ShoppingList';
 import {ShoppingListItemData} from './components/ShoppingList/ShoppingListItem';
+import ShoppingListEditBottomSheet from './components/ShoppingListEditBottomSheet';
 
 const DUMMY_SHOPPING_LIST: ShoppingListItemData[] = [
   {
@@ -71,6 +72,7 @@ export default function Home() {
     <FullContainer backgroundColor={colors.white}>
       <Header />
       <ShoppingList shoppingList={DUMMY_SHOPPING_LIST} />
+      <ShoppingListEditBottomSheet />
     </FullContainer>
   );
 }
