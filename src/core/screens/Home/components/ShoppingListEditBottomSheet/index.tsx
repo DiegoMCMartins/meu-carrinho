@@ -4,6 +4,7 @@ import {View} from 'react-native';
 import BottomSheet from '@core/components/BottomSheet';
 import Text from '@core/components/Text';
 import TextInputField from '@core/components/InputFields/TextInputField';
+import Button from '@core/components/Button';
 
 import {styles} from './styles';
 
@@ -25,6 +26,7 @@ export default function ShoppingListEditBottomSheet({
           </Text>
         </View>
         <TextInputField label="Nome" placeholder="Nome da lista" />
+        <Button text="Salvar" />
       </View>
     </BottomSheet>
   );

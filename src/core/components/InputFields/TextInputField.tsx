@@ -1,7 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 
-import TextInput from '@core/components/TextInput';
+import TextInput, {TextInputProps} from '@core/components/TextInput';
 import Text from '@core/components/Text';
 
 import {styles} from './styles';
@@ -9,6 +9,7 @@ import {styles} from './styles';
 export default function TextInputField({
   label = '',
   placeholder = '',
+  ...textInputProps
 }: TextInputFieldProps) {
   return (
     <View style={styles.container}>
@@ -16,6 +17,7 @@ export default function TextInputField({
         {label}
       </Text>
       <TextInput
+        {...textInputProps}
         style={styles.textInput}
         placeholder={placeholder}
         fontVariant="Medium"
@@ -24,7 +26,8 @@ export default function TextInputField({
   );
 }
 
-export interface TextInputFieldProps {
+export interface TextInputFieldProps
+  extends Omit<TextInputProps, 'style' | 'font' | 'fontVariant'> {
   /**
    * Label of text input
    * Will not be rendered when label isn't setted
