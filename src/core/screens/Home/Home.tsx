@@ -72,7 +72,7 @@ export default function Home() {
     <FullContainer backgroundColor={colors.white}>
       <Header />
       <ShoppingList shoppingList={DUMMY_SHOPPING_LIST} />
-      <ShoppingListEditBottomSheet />
+      <ShoppingListEditBottomSheet isVisible />
     </FullContainer>
   );
 }

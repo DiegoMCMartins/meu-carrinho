@@ -11,7 +11,9 @@ export const styles = StyleSheet.create({
     borderTopRightRadius: 20,
     padding: 20,
   },
-  headerContainer: {},
+  headerContainer: {
+    marginBottom: 28,
+  },
   headerTitle: {
     fontSize: 24,
     color: colors.primary,

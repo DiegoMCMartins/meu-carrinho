@@ -3,6 +3,7 @@ import {View} from 'react-native';
 
 import BottomSheet from '@core/components/BottomSheet';
 import Text from '@core/components/Text';
+import TextInputField from '@core/components/InputFields/TextInputField';
 
 import {styles} from './styles';
 
@@ -11,17 +12,19 @@ import {styles} from './styles';
  */
 export default function ShoppingListEditBottomSheet({
   isEditing = false,
+  isVisible = false,
 }: ShoppingListEditBottomSheetProps) {
   const title = isEditing ? 'Editar Lista' : 'Nova Lista';
 
   return (
-    <BottomSheet isVisible>
+    <BottomSheet isVisible={isVisible}>
       <View style={styles.container}>
         <View style={styles.headerContainer}>
           <Text variant="SemiBold" style={styles.headerTitle}>
             {title}
           </Text>
         </View>
+        <TextInputField label="Nome" placeholder="Nome da lista" />
       </View>
     </BottomSheet>
   );
@@ -33,4 +36,10 @@ export interface ShoppingListEditBottomSheetProps {
    * @default false
    */
   isEditing?: boolean;
+
+  /**
+   * Conditional to open and close the modal
+   * @default false
+   */
+  isVisible?: boolean;
 }
