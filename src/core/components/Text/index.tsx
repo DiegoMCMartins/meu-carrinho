@@ -11,7 +11,6 @@ import {
 /**
  * Wrapper do Text do React Native
  * Utilizado para lidar melhor com as fontes intaladas no projeto
- * @todo Ajustar para trocar o estilos da fonte Montserrat
  */
 export default function Text({
   font = 'Raleway',
