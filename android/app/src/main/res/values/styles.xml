@@ -33,6 +33,14 @@
             @color/primary
         </item>
 
+        <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">
+            @drawable/ic_splash_screen
+        </item>
+
+        <item name="android:windowSplashScreenBrandingImage" tools:targetApi="s">
+            @drawable/ic_brand_image
+        </item>
+
         <item name="android:windowBackground">
             @color/primary
         </item>
